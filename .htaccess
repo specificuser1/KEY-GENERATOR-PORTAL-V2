@@ -1,0 +1,15 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# Protect sensitive files
+<FilesMatch "\.(txt|sqlite)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Redirect admin access
+RewriteRule ^admin$ admin.php [L]
+RewriteRule ^login$ login.php [L]
